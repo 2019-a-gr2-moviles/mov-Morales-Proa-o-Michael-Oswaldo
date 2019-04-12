@@ -1,3 +1,5 @@
+import java.util.*
+
 fun main(args:  Array<String>){
 
 
@@ -45,6 +47,100 @@ var nombre = "Michael Morales"
     estaJalado(0.0)
     estaJalado(7.0)
 
+    holaMundo("Michael hola")
+holaMundoAvanzado(34)
+
+    val suma = sumarDosNumeros(1,2)
+    println(suma)
+
+
+
+
+
+
+
+    val arregloCumpleaños :Array<Int> = arrayOf(1,2,3,4,5,6)
+
+    arregloCumpleaños.set(0,5)
+
+
+    val notas = arrayListOf(1,2,3,4,5,6)
+
+ //val fecha = Date()
+
+
+    //el foreach Itera el Arreglo
+    notas.forEachIndexed{ indice, nota->
+        println("Indice: $indice")
+        println("nota: $nota")
+
+
+    }
+
+
+    //Map itera y modifica el arreglo
+
+
+    val notasDos = notas.map{ nota->
+
+
+        when(nota % 2 ){
+             0 -> {
+                nota+ 1
+             }
+            else ->{
+
+                nota + 2
+            }
+
+        }
+    }
+
+    println("$notasDos")
+
+
+    val respuestaFilter = notas.filter{
+
+        it in 3..6
+
+
+    }.map{
+
+        it * 4
+
+
+    }
+respuestaFilter.forEach{println(it)}
+
+
+
+    val novias = arrayListOf(1,2,3,4,5,6)
+
+
+    val respuestaNovias = novias.any{
+
+        it==3
+    }
+    val tazos = arrayListOf(1,2,3,4,5,6,7)
+
+   val respuestaTazos =  tazos.all{
+        it > 1
+
+
+    }
+
+    println(respuestaTazos)
+
+
+    val valorTazos = tazos.reduce{  valorAcumulado, tazo  ->
+
+        valorAcumulado + tazo
+
+
+    }
+
+    println(valorTazos)
+
 }
 
 
@@ -81,3 +177,19 @@ fun estaJalado(nota:Double){
 
 
 }
+
+fun holaMundo(mensaje: String):Unit{
+
+    println("mensaje: $mensaje.")
+
+
+}
+fun holaMundoAvanzado(mensaje: Any):Unit{
+    println("mensaje: $mensaje.")
+}
+
+fun sumarDosNumeros(numUno: Int, numDos: Int):Int{
+    return numUno + numDos
+
+}
+
