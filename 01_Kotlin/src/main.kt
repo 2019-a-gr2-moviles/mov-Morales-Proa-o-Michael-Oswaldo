@@ -5,7 +5,10 @@ fun main(args:  Array<String>){
 
 
 
-    println("Hello, world")
+
+
+
+    println("Hello, worldeeeee")
 
 /*
 *
@@ -193,3 +196,170 @@ fun sumarDosNumeros(numUno: Int, numDos: Int):Int{
 
 }
 
+
+
+
+
+
+class Usuario(val cedula:String){
+
+    public var nombre:String = ""
+   public var apellido:String = ""
+
+
+  // constructor(apellido:String):this(cedula){
+
+      // this.apellido = apellido;
+
+//}
+
+
+}
+
+class Numero(var numero:Int){
+
+    constructor(numeroString:String):this(numeroString.toInt()){
+
+        println("Const")
+
+    }
+    init{
+        print("init")
+    }
+
+}
+
+
+
+
+
+
+//SI SE ELIMINA EL PUBLIC NO PASA NADA POR QUE KITLIN ES PUBLICO POR DEFECTO
+
+class UsuarioKt(public var nombre:String,
+                public var apellido:String,
+                private var id:Int,
+                protected var id2: Int
+
+
+                        ) {
+    public fun hola():String{
+        return this.apellido
+
+    }
+    private fun hola2(){
+
+    }
+    protected fun hola3(){
+
+
+
+    }
+    companion object {
+        val gravedad = 10.9
+
+fun correr(){
+    println("I am Running en $gravedad")
+
+}
+    }
+}
+
+
+
+class BaseDeDatos{
+companion object {
+
+    val usuarios = arrayListOf(1,2,3)
+    fun agregarUsuario(usuario:Int){
+
+        this.usuarios.add(usuario)
+
+    }
+    fun eliminarUsuario(usuario:Int){
+
+
+    }
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+fun aa(){
+    UsuarioKt.gravedad
+    UsuarioKt.correr()
+
+
+}
+
+
+class A (){
+    //A.correr()      -->
+
+    //A.nombre    -->
+
+}
+
+
+fun a(){
+   // var adrian = UsuarioKt("a","b")
+    //adrian.nombre = "asdasd"
+
+    }
+
+
+
+abstract class Numeros(var numeroUno:Int,
+              var numeroDos:Int){
+
+
+}
+
+class Sunma(numeroUnos:Int,numeroDoss:Int):Numeros(numeroUnos,numeroDoss)
+{
+
+
+
+
+}
+
+
+fun presley(requerido:Int,
+            opcional:Int=1,
+            nulo:UsuarioKt?//Que aveces va a ser nulo
+)
+{
+    if(nulo!=null){
+
+        nulo.nombre
+
+        }
+
+    val nombre:String? = nulo?.nombre.toString()
+
+}
+
+
+fun sdc(){
+    presley(requerido = 1,nulo = null) //Named pARAMETERS
+  //  presley(1,1,1)
+    presley(1,1,null)
+
+
+
+
+
+}
