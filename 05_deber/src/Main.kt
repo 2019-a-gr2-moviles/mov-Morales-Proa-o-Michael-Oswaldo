@@ -2,6 +2,8 @@ import java.io.File
 import java.util.*
 import javax.swing.JOptionPane
 import kotlin.collections.ArrayList
+import java.io.FileWriter
+import java.io.IOException
 
 fun main(args: Array<String>){
     println("Hola perros")
@@ -75,7 +77,7 @@ do {
 file_handler(path,"Mostrar")
     }
     if(accion == "2"){
-
+        file_handler(path,"Crear")
     }
     if(accion == "3"){
 
@@ -109,8 +111,26 @@ arreglo_usuarios.forEach {
    }
     else if(accion == "Crear"){
 
+        val nombreMascotaCreada = JOptionPane.showInputDialog("Ingrese el Nombre de la mascota a creár")
+        val tipoMascotaCreada = JOptionPane.showInputDialog("Ingrese el Tipo de la mascota a creár")
+        val indiceMascotaCreada = JOptionPane.showInputDialog("Ingrese el Indice de la mascota a creár")
 
-   }else if(accion == "Editar"){
+
+        try {
+            val fw = FileWriter(path, true)
+            fw.write("\n$nombreMascotaCreada,$tipoMascotaCreada,$indiceMascotaCreada")
+            fw.close()
+            JOptionPane.showMessageDialog(null,"Mascota Creada!")
+        } catch (e: IOException) {
+            JOptionPane.showMessageDialog(null,"Mascota No se pudo Crear!")
+        }
+
+
+
+
+        }
+
+   else if(accion == "Editar"){
 
    }else if(accion == "Eliminar"){
 
