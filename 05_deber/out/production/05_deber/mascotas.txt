@@ -1,0 +1,3 @@
+juan,perro,1
+pedro,gato,2
+jose,loro,3
