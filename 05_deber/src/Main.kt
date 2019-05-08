@@ -51,11 +51,11 @@ fun validar(usuario:String,contraseña:String):Boolean{
 }
 
 fun adoptar_mascota(nombre:String){
-    val path = "./src/usuarios.txt"
+    val path = "./src/mascotas.txt"
     JOptionPane.showMessageDialog(null,"Bienvenido $nombre \n Presiona en OK para continuar ")
 do {
     val accion = JOptionPane.showInputDialog(
-        "¿Que desea hacer? \n " +
+        "¿Que desea hacer? \n" +
                 "1. Mostrar Mascotas\n" +
                 "2. Adoptar una Mascota\n" +
                 "3. Salir"
@@ -64,11 +64,61 @@ do {
         file_handler(path, "Mostrar")
     }
     if (accion == "2") {
-
+        adoptar(nombre)
     }
 
 }while(accion!="3")
 }
+fun adoptar(user: String){
+    val path = "./src/usuarios.txt"
+    val pathM = "./src/mascotas.txt"
+    val pathMU = "./src/usuario_mascota.txt"
+    val arreglo_usuarios = ArrayList<String>()
+    val arreglo_mascotas = ArrayList<String>()
+    val arreglo_usuarios_mascotas = ArrayList<String>()
+
+    val indiceMascotaAAdoptar = JOptionPane.showInputDialog("Ingrese el Indice de la mascota a adoptar")
+    File(pathM).forEachLine { linea ->
+        arreglo_mascotas.add(linea)
+    }
+    val indicValidar = arreglo_mascotas.indexOfFirst {linea -> linea.split(",")[2]==indiceMascotaAAdoptar }
+if(indicValidar>0){
+
+
+    File(path).forEachLine { linea ->
+        arreglo_usuarios.add(linea)
+    }
+    val  indiceUsuario = arreglo_usuarios.indexOfFirst {linea -> linea.split(",")[0]==user }
+
+    try {
+        val fw = FileWriter(pathMU, true)
+        fw.write("$indiceUsuario,$indiceMascotaAAdoptar\n")
+        fw.close()
+        JOptionPane.showMessageDialog(null,"Mascota Adoptada!")
+    } catch (e: IOException) {
+        JOptionPane.showMessageDialog(null,"Mascota No se pudo Adoptar!")
+    }
+
+
+}
+    else
+{
+
+    JOptionPane.showMessageDialog(null,"La mascota ingresada No existe")
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
 
 fun crud(){
     val path = "./src/mascotas.txt"
@@ -131,7 +181,7 @@ arreglo_usuarios.forEach {
             JOptionPane.showMessageDialog(null,"Mascota No se pudo Crear!")
         }
 
-        }
+    }
 
    else if(accion == "Editar"){
         val indiceEditar = JOptionPane.showInputDialog("Ingrese el indice de la mascota a editar")
