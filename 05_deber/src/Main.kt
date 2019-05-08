@@ -51,13 +51,23 @@ fun validar(usuario:String,contraseña:String):Boolean{
 }
 
 fun adoptar_mascota(nombre:String){
-
+    val path = "./src/usuarios.txt"
     JOptionPane.showMessageDialog(null,"Bienvenido $nombre \n Presiona en OK para continuar ")
+do {
+    val accion = JOptionPane.showInputDialog(
+        "¿Que desea hacer? \n " +
+                "1. Mostrar Mascotas\n" +
+                "2. Adoptar una Mascota\n" +
+                "3. Salir"
+    )
+    if (accion == "1") {
+        file_handler(path, "Mostrar")
+    }
+    if (accion == "2") {
 
-    JOptionPane.showInputDialog("¿Que desea hacer? \n " +
-            "1. Mostrar\n" +
-            "2. Adoptar una Mascota\n" +
-            "3. Salir")
+    }
+
+}while(accion!="3")
 }
 
 fun crud(){
@@ -83,9 +93,7 @@ do {
     if(accion == "4"){
         file_handler(path,"Eliminar")
     }
-    if(accion == "5"){
 
-    }
 
 }while(accion != "5")
 
@@ -131,8 +139,6 @@ arreglo_usuarios.forEach {
             arreglo_usuarios.add(linea)
         }
        val indiceEncontrado = arreglo_usuarios.indexOfFirst {linea -> linea.split(",")[2]==indiceEditar  }
-        JOptionPane.showMessageDialog(null,"indice encontrado = $indiceEncontrado")
-
         if(indiceEncontrado>0){
             val nuevoNombre = JOptionPane.showInputDialog("Ingrese el nuevo nombre")
             val nuevoTipo = JOptionPane.showInputDialog("Ingrese el nuevo Tipo de Mascota")
@@ -156,14 +162,33 @@ arreglo_usuarios.forEach {
         } catch (e: IOException) {
             JOptionPane.showMessageDialog(null,"Mascota No se pudo Editar!")
         }
-
-
-
    }
     else if(accion == "Eliminar"){
+        val indiceBorrar = JOptionPane.showInputDialog("Ingrese el indice de la mascota a Borrar")
+        File(path).forEachLine { linea ->
+            arreglo_usuarios.add(linea)
+        }
+        val indiceEncontrado = arreglo_usuarios.indexOfFirst {linea -> linea.split(",")[2]==indiceBorrar  }
+        if(indiceEncontrado>0){
 
+            arreglo_usuarios.removeAt(indiceEncontrado)
 
-   }
+        }else{
 
+            JOptionPane.showMessageDialog(null, "No se encontro el indice mencionado")
+        }
+        try {
+            val fw = FileWriter(path, true)
 
+            File(path).writeText("")
+            arreglo_usuarios.forEach {
+
+                fw.write(it+"\n")
+            }
+            fw.close()
+            JOptionPane.showMessageDialog(null,"Mascota Eliminada!")
+        } catch (e: IOException) {
+            JOptionPane.showMessageDialog(null,"Mascota No se pudo Eliminar!")
+        }
+    }
 }
