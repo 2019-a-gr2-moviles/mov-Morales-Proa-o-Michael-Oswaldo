@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Te odio Android</string>
+    <string name="app_name">Te odio Android Studio</string>
     <string name="action_settings">Settings</string>
-    <string name="Hola_mundo">Hola Mundo</string>
-
+    <string name="hola_mundo">Hola Mundo!</string>
 </resources>
