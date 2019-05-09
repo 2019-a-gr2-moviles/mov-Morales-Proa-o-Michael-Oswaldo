@@ -1,0 +1,5 @@
+pedro,perro,1
+julio,ave,2
+adel,gato,3
+jose,ave,4
+romeo,perro,5

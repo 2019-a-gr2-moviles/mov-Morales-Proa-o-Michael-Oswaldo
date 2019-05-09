@@ -1,7 +1,8 @@
 import java.util.*
+import java.io.File
 
 fun main(args:  Array<String>){
-
+Numero("1")
 
 
 
