@@ -1,4 +1,4 @@
-package com.example.myapplication2
+package com.example.myapplication
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
