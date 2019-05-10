@@ -6,7 +6,7 @@ import java.io.FileWriter
 import java.io.IOException
 
 fun main(args: Array<String>){
-    println("Hola perros")
+
     val user = JOptionPane.showInputDialog("   Bienvenido a 'My PetShop' " +
             "\n" +
             "Ingrese su nombre de usuario:" +
@@ -17,19 +17,11 @@ fun main(args: Array<String>){
             crud()
         }
         else{
-
-            adoptar_mascota(user)
-        }
-
+            adoptar_mascota(user) }
     }
     else{
-
         println("No se encontro Usuario")
-
     }
-
-
-
 }
 fun validar(usuario:String,contraseña:String):Boolean{
     val path = "./src/usuarios.txt"
@@ -113,13 +105,6 @@ if(indicValidar>0){
 
 
 }
-
-
-
-
-
-
-
 fun crud(){
     val path = "./src/mascotas.txt"
 do {
@@ -148,7 +133,6 @@ do {
 }while(accion != "5")
 
 }
-
 
 fun file_handler(path: String, accion:String){
     var mostrar = "Código:      Tipo:        Nombre:\n"

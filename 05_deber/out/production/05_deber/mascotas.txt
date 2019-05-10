@@ -2,4 +2,6 @@ pedro,perro,1
 julio,ave,2
 adel,gato,3
 jose,ave,4
-romeo,perro,5
+airton,pavo,5
+manuel,pato,12
+pedro,loro,13
