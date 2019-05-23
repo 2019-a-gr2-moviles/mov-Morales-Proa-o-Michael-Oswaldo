@@ -3,6 +3,7 @@ package com.example.myapplication3
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_actividad__dos.*
 
 class Actividad_Dos : AppCompatActivity() {
@@ -11,12 +12,14 @@ class Actividad_Dos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad__dos)
 
+        val nombre:String? = intent.getStringExtra("nombre")
+        val edad:Int? = intent.getIntExtra("edad",0)
+        Log.i("intents","Nombre: $nombre")
+        Log.i("intents","Edad: $edad")
         btn_actividad_uno.setOnClickListener {
             irAActividadUno()
 
         }
-
-
     }
 
     fun irAActividadUno() {
