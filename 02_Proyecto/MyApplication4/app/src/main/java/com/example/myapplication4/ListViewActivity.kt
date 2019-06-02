@@ -26,6 +26,8 @@ class ListViewActivity : AppCompatActivity() {
 
 
         val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,listaNombres)
+
+        
         lv_ejemplo.adapter = adapter
 
 

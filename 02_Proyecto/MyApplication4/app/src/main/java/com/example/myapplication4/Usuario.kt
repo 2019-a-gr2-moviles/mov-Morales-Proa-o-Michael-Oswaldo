@@ -11,6 +11,10 @@ class Usuario(var nombre:String, var edad:Int, var fechaNacimiento:Date,var suel
         parcel.readSerializable() as Date,
         parcel.readDouble()
     ) {
+
+
+
+
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
