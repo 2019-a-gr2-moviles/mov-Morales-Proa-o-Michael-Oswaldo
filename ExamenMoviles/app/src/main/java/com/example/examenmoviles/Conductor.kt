@@ -1,19 +1,22 @@
 package com.example.examenmoviles
 
+import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
+import android.support.annotation.RequiresApi
+import java.time.LocalDate
 import java.util.*
 
-class Conductor(val nombres: String, val apellidos:String, val fechaNacimiento:Date , val numeroAutos:Int, val licenciaValida:Boolean) : Parcelable {
+class Conductor(val nombres: String, val apellidos:String, val fechaNacimiento: LocalDate, val numeroAutos:Int, val licenciaValida:Boolean) : Parcelable {
+    @RequiresApi(Build.VERSION_CODES.O)
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.readSerializable() as Date,
+        parcel.readSerializable() as LocalDate,
         parcel.readInt(),
         parcel.readByte() != 0.toByte()
     ) {
     }
-
     var autos = arrayListOf<Auto>()
 
     fun AñadirAuto( auto:Auto){
@@ -21,11 +24,9 @@ class Conductor(val nombres: String, val apellidos:String, val fechaNacimiento:D
     }
 
 
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombres)
         parcel.writeString(apellidos)
-        parcel.writeSerializable(fechaNacimiento)
         parcel.writeInt(numeroAutos)
         parcel.writeByte(if (licenciaValida) 1 else 0)
     }
@@ -35,6 +36,7 @@ class Conductor(val nombres: String, val apellidos:String, val fechaNacimiento:D
     }
 
     companion object CREATOR : Parcelable.Creator<Conductor> {
+        @RequiresApi(Build.VERSION_CODES.O)
         override fun createFromParcel(parcel: Parcel): Conductor {
             return Conductor(parcel)
         }
@@ -43,6 +45,5 @@ class Conductor(val nombres: String, val apellidos:String, val fechaNacimiento:D
             return arrayOfNulls(size)
         }
     }
-
 
 }
