@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         btn_adapter.setOnClickListener {
             irAListaView() }
 
+        btn_recyclerView.setOnClickListener {
+            irARecycleView()
+        }
+
     }
     fun irAListaView(){
 
@@ -63,7 +67,17 @@ val intentExplicito = Intent(
 
 
 
+fun irARecycleView(){
+    val intentExplicito = Intent(
 
+        this, ReciclerViewActivity::class.java
+    )
+
+    startActivity(intentExplicito)
+
+
+
+}
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
