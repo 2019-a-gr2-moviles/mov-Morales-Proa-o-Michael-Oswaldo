@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         btn_recyclerView.setOnClickListener {
             irARecycleView()
         }
+        btn_intent_respuesta.setOnClickListener {
+            irAIntentRespuesta()
+        }
+
 
     }
     fun irAListaView(){
@@ -44,7 +48,17 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    fun irAIntentRespuesta(){
 
+        val intentExplicito = Intent(
+
+            this, IntentRespuestaActivity::class.java
+        )
+
+        startActivity(intentExplicito)
+
+
+    }
 
 
 

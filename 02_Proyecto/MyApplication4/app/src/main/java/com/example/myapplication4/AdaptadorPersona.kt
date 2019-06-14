@@ -30,6 +30,18 @@ class AdaptadorPersona(private val listaPersonas: List<Persona>,
             layout.setOnClickListener { Log.i("layput","Layout presionado")  }
             accionBoton.setOnClickListener {
                 nombreTextView.text = "has tocado el boton"
+
+                contexto.cambiarNombreTextView("WoW")
+
+
+                val nuevasPersonas = arrayListOf<Persona>()
+
+                nuevasPersonas.add(Persona("Michael","171651665156"))
+                nuevasPersonas.add(Persona("Pepe","1123123123"))
+                nuevasPersonas.add(Persona("Lord","171651665123"))
+
+
+                contexto.iniciarRecylerView(nuevasPersonas,contexto,recyclerView)
             }
         }
     }

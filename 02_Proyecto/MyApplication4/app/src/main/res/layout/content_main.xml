@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"/>
     <Button
-            android:text="Button"
+            android:text="Recycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_recyclerView" app:layout_constraintEnd_toStartOf="@+id/btn_parcelable"
@@ -44,5 +44,11 @@
             app:layout_constraintBottom_toBottomOf="@+id/btn_parcelable" app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"/>
+    <Button
+            android:text="Contactos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="487dp"
+            android:id="@+id/btn_intent_respuesta" app:layout_constraintStart_toStartOf="@+id/btn_parcelable"
+            app:layout_constraintEnd_toEndOf="@+id/btn_parcelable" app:layout_constraintHorizontal_bias="1.0"/>
 
 </android.support.constraint.ConstraintLayout>
