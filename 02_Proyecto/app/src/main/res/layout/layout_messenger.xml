@@ -9,8 +9,8 @@
     <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/img_profile_image"
-            android:layout_width="105dp"
-            android:layout_height="104dp"
+            android:layout_width="75dp"
+            android:layout_height="77dp"
             android:src="@drawable/a1"
             app:civ_border_width="0dp"
             app:civ_border_color="#FF000000"/>
@@ -19,22 +19,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/txt_nombre_usuario"
             android:layout_toEndOf="@+id/img_profile_image"
-            android:layout_toRightOf="@+id/img_profile_image" android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_toRightOf="@+id/img_profile_image" android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp"
             android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-            android:layout_marginRight="150dp" android:layout_marginEnd="150dp" android:layout_marginTop="27dp"
+            android:layout_marginRight="142dp" android:layout_marginEnd="142dp" android:layout_marginTop="26dp"
             android:layout_alignParentTop="true"/>
     <TextView
             android:text="TextView"
             android:layout_width="124dp"
-            android:layout_height="wrap_content" android:id="@+id/txt_mensaje" android:layout_marginTop="18dp"
+            android:layout_height="wrap_content" android:id="@+id/txt_mensaje" android:layout_marginTop="7dp"
             android:layout_below="@+id/txt_nombre_usuario" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="150dp" android:layout_marginEnd="150dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="175dp" android:layout_marginEnd="175dp"
+            android:layout_toEndOf="@+id/img_profile_image" android:layout_toRightOf="@+id/img_profile_image"
+            android:layout_marginLeft="37dp" android:layout_marginStart="37dp"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/txt_hora"
             android:layout_toEndOf="@+id/img_profile_image"
-            android:layout_toRightOf="@+id/img_profile_image" android:layout_marginLeft="227dp"
-            android:layout_marginStart="227dp" android:layout_marginTop="25dp" android:layout_alignParentTop="true"/>
+            android:layout_toRightOf="@+id/img_profile_image" android:layout_marginLeft="179dp"
+            android:layout_marginStart="179dp" android:layout_marginTop="25dp" android:layout_alignParentTop="true"/>
 </RelativeLayout>
