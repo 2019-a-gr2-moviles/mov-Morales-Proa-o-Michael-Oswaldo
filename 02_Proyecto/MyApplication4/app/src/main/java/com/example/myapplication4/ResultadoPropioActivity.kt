@@ -17,9 +17,6 @@ class ResultadoPropioActivity : AppCompatActivity() {
             devolverRespuesta()
         }
 
-        btn_enviar_respuesta_propia.setOnClickListener {
-            enviarIntentConRespuestaPropia()
-        }
     }
 
 
@@ -40,15 +37,6 @@ class ResultadoPropioActivity : AppCompatActivity() {
             this.finish()
 
 
-
-    }
-
-
-
-    fun enviarIntentConRespuestaPropia(){
-
-        val intentPropio = Intent(this,ResultadoPropioActivity::class.java)
-        this.startActivityForResult(intentPropio,305)
 
     }
 }

@@ -15,8 +15,12 @@ class IntentRespuestaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_intent_respuesta)
 
 
-        btn_enviar_respuesta.setOnClickListener {
+        btn_enviar_intent_respuesta.setOnClickListener {
             enviarIntentConRespuesta()
+        }
+
+        btn_enviar_respuesta_propia.setOnClickListener {
+            enviarIntentConRespuestaPropia()
         }
     }
 
@@ -31,6 +35,13 @@ class IntentRespuestaActivity : AppCompatActivity() {
 
 
     }
+    fun enviarIntentConRespuestaPropia(){
+        val intentPropio = Intent(
+            this,
+            ResultadoPropioActivity::class.java
+        )
+        this.startActivityForResult(intentPropio,305)
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -39,7 +50,7 @@ class IntentRespuestaActivity : AppCompatActivity() {
             RESULT_OK ->{
                 when(requestCode){
 
-                    304 ->{
+                    304 -> {
 
 
                         val uri = data?.data
@@ -55,11 +66,11 @@ class IntentRespuestaActivity : AppCompatActivity() {
 
                         Log.i("respuesta","Lo logramos mijo!!!")
                     }
-                    305 ->{
+                    305 -> {
 
                         val nombre = data?.getStringExtra("nombreUsuario")
                         val edad = data?.getIntExtra("edadUsuario", 0)
-                        Log.i("resp:","Nombre: $nombre Edad $edad")
+                        Log.i("respuesta","Nombre: $nombre Edad $edad")
 
 
                     }
