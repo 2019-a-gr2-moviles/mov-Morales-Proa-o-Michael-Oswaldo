@@ -1,5 +1,6 @@
 package com.example.mssenger
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         listaMensajes.add(Mensaje("Jhoana","You: Eres la unica","10:30 am",8))
         listaMensajes.add(Mensaje("Ery","You: Eres la unica","8:30 am",3))
         listaMensajes.add(Mensaje("Steffi","You: Eres la unica","10:30 am",10))
-        0
 
         iniciarRecylerView(listaMensajes,this,recycler_view_mensajes)
 
@@ -48,6 +48,20 @@ class MainActivity : AppCompatActivity() {
         recycler_view.layoutManager = LinearLayoutManager(actividad)
 
         adaptadorMensaje.notifyDataSetChanged()
+    }
+
+
+    fun irAChatAcivity(mensaje: Mensaje){
+        val intentExplicito = Intent(
+            this,
+            ChatActivity::class.java
+        )
+
+
+        intentExplicito.putExtra("mensaje",mensaje)
+        startActivity(intentExplicito)
+
+
     }
 
 
