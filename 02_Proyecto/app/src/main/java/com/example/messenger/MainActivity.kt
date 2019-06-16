@@ -14,17 +14,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var listaMensajes = arrayListOf<Mensaje>()
 
-        listaMensajes.add(Mensaje("Michael","You: hola","8:30 am",1))
-        listaMensajes.add(Mensaje("Jose","You: hola mijo","8:30 am",2))
-        listaMensajes.add(Mensaje("Pedro","You: hola mijo","8:30 am",3))
-        listaMensajes.add(Mensaje("Juanito","You: hola mijo","8:30 am",4))
-        listaMensajes.add(Mensaje("Pepe","You: hola mijo","8:30 am",5))
-        listaMensajes.add(Mensaje("Limon","You: hola mijo","8:30 am",6))
-        listaMensajes.add(Mensaje("Anita","You: hola mijo","8:30 am",7))
-        listaMensajes.add(Mensaje("Jhon","You: hola mijo","8:30 am",8))
-        listaMensajes.add(Mensaje("Ernesto","You: hola mijo","8:30 am",9))
-        listaMensajes.add(Mensaje("Jeff","You: hola mijo","8:30 am",10))
-0
+        listaMensajes.add(Mensaje("Michael","You: no papu","8:30 am",1))
+        listaMensajes.add(Mensaje("Joselyn","You: Eres la unica amor","8:30 am",2))
+        listaMensajes.add(Mensaje("Amanda","You: solo te quiero a ti bebe","8:30 am",3))
+        listaMensajes.add(Mensaje("Juanita","You: hola bonita","8:30 am",4))
+        listaMensajes.add(Mensaje("Maria","You: Eres la unica","8:31 am",5))
+        listaMensajes.add(Mensaje("Lima","You: que mas linda","9:30 am",6))
+        listaMensajes.add(Mensaje("Anita","You: hola","8:30 am",7))
+        listaMensajes.add(Mensaje("Jhoana","You: Eres la unica","10:30 am",8))
+        listaMensajes.add(Mensaje("Ery","You: Eres la unica","8:30 am",9))
+        listaMensajes.add(Mensaje("Steffi","You: Eres la unica","10:30 am",10))
+        0
 
         iniciarRecylerView(listaMensajes,this,recycler_view_mensajes)
 
