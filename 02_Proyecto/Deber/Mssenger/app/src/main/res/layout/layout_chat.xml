@@ -13,6 +13,7 @@
             android:layout_marginRight="160dp"
             android:id="@+id/text_a_chat"
             android:radius="10dp"
+            android:padding="10dp"
             android:background="@drawable/round"/>
     <TextView
             android:layout_marginLeft="160dp"
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text_b_chat"
+            android:padding="10dp"
             android:radius="10dp"
             android:background="@drawable/round2"
             />
