@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
+    btn_http.setOnClickListener {
+    irAIntentHttp() }
 
         btn_parcelable.setOnClickListener {
             irAParcelable() }
@@ -52,6 +53,16 @@ class MainActivity : AppCompatActivity() {
         )
 
         startActivity(intentExplicito)
+
+
+    }
+    fun irAIntentHttp(){
+        val intentExplicito = Intent(
+
+            this, ConexionHttpActivity::class.java
+        )
+        startActivity(intentExplicito)
+
 
 
     }
