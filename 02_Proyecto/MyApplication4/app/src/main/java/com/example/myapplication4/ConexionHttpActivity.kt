@@ -78,36 +78,14 @@ class ConexionHttpActivity : AppCompatActivity() {
         }
 
 
-        val url = "http://192.168.56.1:1337/empresa/6"
+        val url = "http://192.168.56.1:1337/empresa/1"
 
 
-        url
-            .httpGet()
-            .responseString { request, response, result ->
-                when (result) {
-                    is Failure -> {
-                        val ex = result.getException()
-                        Log.i("http", "Error: ${ex.message}")
-                    }
-                    is Success -> {
-                        val data = result.get()
-                        Log.i("http data", "Data: ${data}")
 
-                        val empresaParseada = Klaxon()
-                            .parse<Empresa>(data)
-                        if (empresaParseada != null) {
-                            Log.i("http"," iiiiiiiiiiiiiiiiiiii ")
-                            Log.i("http","${empresaParseada.nombre} ")
-                            Log.i("http","${empresaParseada.id} ")
-                        }
-                    }
-                }
-            }
 
-/*
-        var empresa:HttpEmpresa = HttpEmpresa("http://192.168.56.1:1337/","empresa/2")
+        var empresa:HttpEmpresa = HttpEmpresa("http://192.168.56.1:1337/","empresa")
 
-       var data = empresa.get()
+       var data = empresa.get(1)
         Log.i("data EEEEEES","DATAAAA : ${data}")
 
         val empresaParseada = Klaxon()
@@ -118,6 +96,6 @@ class ConexionHttpActivity : AppCompatActivity() {
             Log.i("http","${empresaParseada.id} ")
         }
 
-*/
+
     }
 }

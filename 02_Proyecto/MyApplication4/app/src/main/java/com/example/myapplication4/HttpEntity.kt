@@ -9,8 +9,8 @@ import kotlinx.coroutines.runBlocking
 import java.util.*
 
 open class HttpEntity<Entity>(var url:String,var modelo:String ) {
-    fun get():String{
-        var url = "${this.url}${this.modelo}";
+    fun get(id:Int):String{
+        var url = "${this.url}${this.modelo}/${id}";
         var returned = ""
             url.httpGet().responseString { request, response, result ->
                 when (result) {
