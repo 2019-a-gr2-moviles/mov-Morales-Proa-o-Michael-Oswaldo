@@ -55,9 +55,8 @@ module.exports = {
     correo: {
       type: 'string',
       isEmail: true
-    }
-  },
-  fkEmpresa:{
+    },
+     fkEmpresa:{
     model:'empresa',
 
   },
@@ -67,6 +66,8 @@ module.exports = {
     via: 'fkUsuario' //Nombre del atributo FK del otro modelo
 
   }
+  },
+ 
 
 };
 
