@@ -95,8 +95,9 @@ class MisMascotasActivity : AppCompatActivity() {
         try{
             mascotaHttp.patch(parametrosInmuebleAEnviar,id)
 
-            Toast.makeText(this, "Adopcion Cancelada Exitosamente", Toast.LENGTH_SHORT).show()
+
             Thread.sleep(1000)
+            Toast.makeText(this, "Adopcion Cancelada Exitosamente", Toast.LENGTH_SHORT).show()
             crear()
         }
         catch(e:Exception){

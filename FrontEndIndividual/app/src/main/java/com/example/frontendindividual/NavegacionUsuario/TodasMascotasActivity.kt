@@ -97,8 +97,8 @@ class TodasMascotasActivity : AppCompatActivity() {
         try{
             mascotaHttp.patch(parametrosInmuebleAEnviar,id)
 
-            Toast.makeText(this, "Adopcion Registrada Exitosamente", Toast.LENGTH_SHORT).show()
             Thread.sleep(1000)
+            Toast.makeText(this, "Adopcion Registrada Exitosamente", Toast.LENGTH_SHORT).show()
             crear()
         }
         catch(e:Exception){

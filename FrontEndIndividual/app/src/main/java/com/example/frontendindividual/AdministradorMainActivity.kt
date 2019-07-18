@@ -1,5 +1,6 @@
 package com.example.frontendindividual
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,7 @@ class AdministradorMainActivity : AppCompatActivity() {
         btn_crear.setOnClickListener {
             crear()
         }
+
     }
     fun crear(){
         var instanceForComanionObject = MainActivity
@@ -54,8 +56,8 @@ class AdministradorMainActivity : AppCompatActivity() {
 
                 try{
                     mascotaHttp.post(parametrosPublicacionAEnviar)
-                    Toast.makeText(this, "Mascota Creada Exitosamente", Toast.LENGTH_SHORT).show()
                     Thread.sleep(1500)
+                    Toast.makeText(this, "Mascota Creada Exitosamente", Toast.LENGTH_SHORT).show()
                     vaciar()
                 }
                 catch(e:Exception){
@@ -97,6 +99,5 @@ class AdministradorMainActivity : AppCompatActivity() {
         edit_tamanio.setText("")
         edit_raza.setText("")
     }
-
 
 }
