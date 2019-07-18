@@ -14,7 +14,8 @@ import android.widget.TextView
 
 class AdaptadorMensaje (private val listaMensajes:List<Mensaje>,
                         private val contexto:MainActivity,
-                        private val recyclerview:RecyclerView): RecyclerView.Adapter<AdaptadorMensaje.MyViewHolder>() {
+                        private val recyclerview:RecyclerView
+): RecyclerView.Adapter<AdaptadorMensaje.MyViewHolder>() {
 
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
